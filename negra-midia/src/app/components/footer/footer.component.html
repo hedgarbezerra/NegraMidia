@@ -27,14 +27,16 @@
                       <div class="uk-inline icon-form-input">
                           <span class="uk-form-icon" uk-icon="icon: user"></span>
                           <input type="text" class="uk-input" name="name" placeholder="Nome*"
-                              aria-label="Nome" required title="Nome" autocomplete="name" formControlName="name"/>
+                              aria-label="Nome" required title="Nome" autocomplete="name" formControlName="name"
+                              [ngClass]="getFormValidationClass('name')"/>
                       </div>
                   </div>
                   <div class="uk-width-1-1@s">
                       <div class="uk-inline icon-form-input">
                           <span class="uk-form-icon" uk-icon="icon: mail"></span>
                           <input type="email" class="uk-input" name="email" placeholder="E-mail*"
-                              aria-label="E-mail" required title="email" autocomplete="email" formControlName="email">
+                              aria-label="E-mail" required title="email" autocomplete="email" formControlName="email"
+                              [ngClass]="getFormValidationClass('email')">
                       </div>
                   </div>
                   <div class="uk-width-1-2@s">
@@ -45,7 +47,7 @@
                               title="telefone" autocomplete="tel"
                               pattern="\(\d{2}\)\d{4,5}-\d{4}"
                               [imask]="{mask: [ { mask: '(00)0000-0000'}, { mask: '(00)00000-0000' } ]}"
-                              formControlName="phone">
+                              formControlName="phone" [ngClass]="getFormValidationClass('phone')">
                       </div>
                   </div>
                   <div class="uk-width-1-2@s">
@@ -53,14 +55,16 @@
                           <span class="uk-form-icon" uk-icon="icon: forward"></span>
                           <input type="text" class="uk-input" name="subject" placeholder="Assunto*"
                               aria-label="Assunto"
-                              required title="assunto" autocomplete="off" formControlName="subject">
+                              required title="assunto" autocomplete="off" formControlName="subject"
+                              [ngClass]="getFormValidationClass('subject')">
                       </div>
                   </div>
                   <div class="uk-width-1-1@s">
                       <div class="uk-inline icon-form-input">
                           <span class="uk-form-icon" uk-icon="icon: commenting"></span>
                           <textarea class="uk-input uk-form-large" name="body" placeholder="Mensagem*"
-                              required formControlName="body"></textarea>
+                              required formControlName="body"
+                              [ngClass]="getFormValidationClass('body')"></textarea>
                       </div>
                   </div>
                   <div class="uk-width-1-1@s">

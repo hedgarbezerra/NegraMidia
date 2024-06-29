@@ -8,8 +8,8 @@
   "orientation": "portrait",
   "lang": "pt-br",
   "id": "/",
-  "scope": "https://negramidia.net/",
-  "start_url": "https://negramidia.net/",
+  "scope": "https://negramidia.net",
+  "start_url": "https://negramidia.net",
   "icons": [
     {
       "src": "icons/icon-72x72.png",
@@ -65,5 +65,10 @@
       "sizes": "1919x919",
       "form_factor": "wide"
     }
-  ]
+  ],
+  "related_applications": [
+    {
+    "platform": "webapp",
+    "url": "https://negramidia.net"
+  }]
 }

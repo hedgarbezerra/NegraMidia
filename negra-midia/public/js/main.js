@@ -10,3 +10,10 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     }));
 });
+
+window.addEventListener('appinstalled', () => {
+  // If visible, hide the install promotion
+  hideInAppInstallPromotion();
+  // Log install to analytics
+  console.log('INSTALL: Success');
+});

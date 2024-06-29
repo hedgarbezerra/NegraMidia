@@ -36,6 +36,32 @@ html {
   border-radius: 3px;
 }
 
+@-webkit-keyframes pulseError {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(126, 18, 18, 0.4);
+  }
+  70% {
+      -webkit-box-shadow: 0 0 0 10px rgba(126, 18, 18, 0);
+  }
+  100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(126, 18, 18, 0);
+  }
+}
+@keyframes pulseError {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(126, 18, 18, 0.4);
+    box-shadow: 0 0 0 0 rgba(126, 18, 18, 0.2);
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 10px rgba(126, 18, 18, 0);
+      box-shadow: 0 0 0 10px rgba(126, 18, 18, 0);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(126, 18, 18, 0);
+      box-shadow: 0 0 0 0 rgba(126, 18, 18, 0);
+  }
+}
+
 /* Loading spinner */
 .spinner-loading {
   position: fixed !important;
@@ -126,7 +152,6 @@ html {
   color: var(--primary-color) !important;
 }
 
-
 .team-card {
   --angle: 45deg;
   background: radial-gradient(
@@ -182,37 +207,37 @@ html {
   max-height: 230px;
 }
 
-.header-inicial{
+.header-inicial {
   padding: 20px 40px 20px 40px;
 }
 
-.header-secundario  {
+.header-secundario {
   color: #ffffff;
   background-color: var(--auxiliary-gray);
 }
 
-.heading-inicio{
+.heading-inicio {
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 }
-.heading-inicio, .heading-inicio *{
-    font-family: "Madimi One" !important;
-    word-break: keep-all !important;
-    color: var(--auxiliary-lighterblack) !important;
-    font-size: 80px;
+.heading-inicio,
+.heading-inicio * {
+  font-family: "Madimi One" !important;
+  word-break: keep-all !important;
+  color: var(--auxiliary-lighterblack) !important;
+  font-size: 80px;
 }
 
-.heading-orange{
-    color: var(--primary-color) !important;
+.heading-orange {
+  color: var(--primary-color) !important;
 }
-
 
 /* Responsive and definitions */
 
-
 @media screen and (min-width: 1280px) {
-  .heading-inicio, .heading-inicio *{
+  .heading-inicio,
+  .heading-inicio * {
     font-size: 90px;
   }
 }
@@ -222,30 +247,32 @@ html {
     display: flow-root !important;
   }
 
-
-  .heading-inicio, .heading-inicio *{
+  .heading-inicio,
+  .heading-inicio * {
     font-size: 54px;
   }
 }
 
-@media screen and (min-width: 640px){
-  .header-inicial{
+@media screen and (min-width: 640px) {
+  .header-inicial {
     height: 80vh;
   }
 
-  .header-inicial> * {
+  .header-inicial > * {
     height: 100%;
   }
 }
 
 @media screen and (max-width: 640px) {
-  .heading-inicio, .heading-inicio *{
+  .heading-inicio,
+  .heading-inicio * {
     font-size: 50px;
   }
 }
 
 @media screen and (max-width: 360px) {
-  .heading-inicio, .heading-inicio *{
+  .heading-inicio,
+  .heading-inicio * {
     font-size: 40px;
   }
 }
@@ -254,8 +281,6 @@ html {
     --angle: 360deg;
   }
 }
-
-
 
 /* Sobrescrita do UIKit */
 .uk-navbar-nav > li > a,
@@ -283,26 +308,41 @@ html {
 .uk-card {
   border-radius: 3px !important;
 }
+
 .uk-input:focus,
 .uk-select:focus,
 .uk-textarea:focus {
   border-color: var(--primary-color) !important;
 }
+
+.uk-input.success{
+  border-color: var(--primary-color) !important;
+}
+
+.uk-input.error{
+  animation: pulseError 2s infinite;
+  border-color: rgb(126, 18, 18) !important;
+}
+
 .uk-dotnav > .uk-active > * {
   background-color: var(--primary-color) !important;
 }
+
 .uk-button-text:hover {
   color: var(--primary-color) !important;
 }
+
 .uk-padding-medium {
   padding: 40px;
 }
-.uk-heading-line>::after, .uk-heading-line>::before{
-    top: calc(80% - (calc(.2px + .05em)/ 2)) ;
-    border-bottom: calc(.2px + .05em) solid #333 !important;
+
+.uk-heading-line > ::after,
+.uk-heading-line > ::before {
+  top: calc(80% - (calc(0.2px + 0.05em) / 2));
+  border-bottom: calc(0.2px + 0.05em) solid #333 !important;
 }
 
-.uk-navbar-sticky{
+.uk-navbar-sticky {
   position: fixed;
   z-index: 999;
   width: 100%;
